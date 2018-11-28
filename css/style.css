@@ -1,0 +1,91 @@
+body {
+  font-family: "Sedgwick Ave", cursive;
+  background-color: #fcc496;
+}
+
+.container {
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container .console {
+  height: 40vh;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.container .console__mainHeader {
+  margin-bottom: 3vh;
+  width: 100%;
+  line-height: 60px;
+  font-size: 60px;
+}
+
+.container .console__secondaryHeader {
+  margin-top: 0;
+}
+
+.container .console .scoreboard {
+  display: none;
+  height: 6vh;
+  width: 40%;
+  margin: 0 auto;
+  border: 2px solid #333;
+  border-radius: 4px;
+  position: relative;
+  font-size: 40px;
+}
+
+.container .console .scoreboard .badge {
+  padding: 10px 0;
+  display: block;
+  width: 80px;
+  background-color: #498b8d;
+}
+
+.container .console .scoreboard .badge-user {
+  position: absolute;
+  left: 5%;
+  top: 30%;
+}
+
+.container .console .scoreboard .badge-computer {
+  position: absolute;
+  right: 5%;
+  top: 30%;
+}
+
+.container .console .scoreboard .user-score {
+  line-height: 6vh;
+}
+
+.container .console .game-btn {
+  font-size: 60px;
+  padding: 0 10px;
+  display: none;
+}
+
+.container .console .output {
+  display: block;
+  height: 26px;
+  text-align: center;
+  font-size: 26px;
+  line-height: 26px;
+  margin: 1vh auto;
+}
+
+.container .console .memo {
+  display: none;
+  margin: 1vh auto;
+  font-size: 24px;
+}
+/*# sourceMappingURL=style.css.map */

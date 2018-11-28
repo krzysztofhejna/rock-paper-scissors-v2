@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock/Paper/Scissors - A simple game using javascript</title>
+        <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="console" id="console">
+                <h1 class="console__mainHeader">Rock/Paper/Scissors</h1>
+                <div class="scoreboard" id="scoreboard">
+                    <div id="user-label" class="badge badge-user">User</div>
+                    <div id="computer-label" class="badge badge-computer">Computer</div>
+                    <span id="user-score" class="user-score">0</span>:<span id="computer-score">0</span>
+                </div>
+                <div class="output" id="output"></div>
+                <button class="btn btn-primary" id="newGame-btn">Start a New Game</button>
+                <i class="fas fa-hand-rock game-btn" id="rock-btn"></i>
+                <i class="fas fa-hand-paper game-btn" id="paper-btn"></i>
+                <i class="fas fa-hand-scissors game-btn" id="scissors-btn"></i>
+                <div class="memo" id="memo">Choose wisely!</div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>
