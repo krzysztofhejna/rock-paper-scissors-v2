@@ -15,79 +15,106 @@ body {
     -webkit-justify-content: center;
     justify-content: center;
     flex-wrap: wrap;
-
-    .console {
-        height: 40vh;
-        width: 100%;
-        display: block;
-        text-align: center;
-
-        &__mainHeader {
-            margin-bottom: 3vh;
-            width: 100%;
-            line-height: 60px;
-            font-size: 60px;
-        }
-
-        &__secondaryHeader {
-            margin-top: 0;
-        }
-
-        .scoreboard {
-            display: none;
-            height: 6vh;
-            width: 40%;
-            margin: 0 auto;
-            border: 2px solid #333;
-            border-radius: 4px;
-            position: relative;
-            font-size: 40px;
-
-            .badge {
-                padding: 10px 0;
-                display: block;
-                width: 80px;
-                background-color: #498b8d;
-
-                &-user {
-                    position: absolute;
-                    left: 5%;
-                    top: 30%;
-                }
-
-                &-computer {
-                    position: absolute;
-                    right: 5%;
-                    top: 30%;
-                }
-            }
-
-            .user-score {
-                line-height: 6vh;
-            }
-
-        }
- 
-        .game-btn {
-            font-size: 60px;
-            padding: 0 10px;
-            display: none;
-        }
-
-        .output {
-            display: block;
-            height: 26px;
-            text-align: center;
-            font-size: 26px;
-            line-height: 26px;
-            margin: 1vh auto;
-        }
-
-        .memo {
-            display: none;
-            margin: 1vh auto;
-            font-size: 24px;
-        }
-    }
 }
 
+.console {
+    height: 40vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+
+    &__mainHeader {
+        margin-bottom: 3vh;
+        width: 100%;
+        line-height: 60px;
+        font-size: 60px;
+    }
+
+    &__secondaryHeader {
+        margin-top: 0;
+    }
+
+    .newGame-btn {
+        margin: 10px auto;
+    }
+    
+    .scoreboard {
+        display: none;
+        height: 6vh;
+        width: 40%;
+        margin: 0 auto;
+        border: 2px solid #333;
+        border-radius: 4px;
+        position: relative;
+        font-size: 40px;
+
+        .badge {
+            padding: 10px 0;
+            display: block;
+            width: 80px;
+            background-color: #498b8d;
+
+            &-user {
+                position: absolute;
+                left: 5%;
+                top: 30%;
+            }
+
+            &-computer {
+                position: absolute;
+                right: 5%;
+                top: 30%;
+            }
+        }
+
+        .user-score {
+            line-height: 6vh;
+        }
+    }
+
+    .game-btn {
+        width: 8vw;
+        font-size: 60px;
+        margin: 0 10px;
+        display: none;
+        background-color: $color-main;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .green-border {
+        border: 3px solid #4dcc7d;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #31b43a;
+    }
+
+    .red-border {
+        border: 3px solid #fc121b;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #d01115;
+    }
+
+    .gray-border {
+        border: 3px solid #464647;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #25292b;
+    }
+
+    .output {
+        display: block;
+        height: 26px;
+        text-align: center;
+        font-size: 26px;
+        line-height: 26px;
+        margin: 1vh auto;
+    }
+
+    .memo {
+        display: none;
+        margin: 1vh auto;
+        font-size: 24px;
+    }
+}
