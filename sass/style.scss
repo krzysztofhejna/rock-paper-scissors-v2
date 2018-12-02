@@ -73,9 +73,11 @@ body {
     }
 
     .game-btn {
-        width: 8vw;
+        width: 90px;
         font-size: 60px;
-        margin: 0 10px;
+        line-height: 70px;
+        padding: 8px;
+        margin: 10px;
         display: none;
         background-color: $color-main;
         border: none;

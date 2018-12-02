@@ -34,12 +34,14 @@
             userScoreSpan.innerHTML = userScore;
             computerScore = 0;
             computerScoreSpan.innerHTML = computerScore;
-            output.innerHTML = ('');
+            while (output.hasChildNodes ()) {
+                output.removeChild(output.firstChild);
+            }
         }
     }
     
-    var isGameFinished = function(Score) {
-        if (Score >= pointsToWin) {
+    var isGameFinished = function(score) {
+        if (score >= pointsToWin) {
             return true;
         }
         return false;
