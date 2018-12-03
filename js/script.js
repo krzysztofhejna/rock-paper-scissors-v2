@@ -1,13 +1,23 @@
 'use strict';
 (function () {
-    var pointsToWin;
-    var buttonNewGame = document.getElementById("newGame-btn");
-    var buttons = document.querySelectorAll('.player-move');
-    var userScore = 0;
-    var computerScore = 0;
-    var userScoreSpan = document.getElementById("user-score");
-    var computerScoreSpan = document.getElementById("computer-score");
-    var output = document.getElementById("output");
+    var params = {
+            pointsToWin:null,
+            buttonNewGame = document.getElementById("newGame-btn"),
+            buttons:document.querySelectorAll('.player-move'),
+            userScore: 0,
+            computerScore: 0,
+            userScoreSpan: document.getElementById("user-score"),
+            computerScoreSpan: document.getElementById("computer-score"),
+            output: document.getElementById("output")
+    }
+    // var pointsToWin;
+    // var buttonNewGame = document.getElementById("newGame-btn");
+    // var buttons = document.querySelectorAll('.player-move');
+    // var userScore = 0;
+    // var computerScore = 0;
+    // var userScoreSpan = document.getElementById("user-score");
+    // var computerScoreSpan = document.getElementById("computer-score");
+    // var output = document.getElementById("output");
 
 
     var isInputValid = function (pointsToWin) {
