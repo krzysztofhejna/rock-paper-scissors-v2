@@ -1,7 +1,7 @@
 'use strict';
 (function () {
     var pointsToWin;
-    var button1 = document.getElementById("newGame-btn");
+    var buttonNewGame = document.getElementById("newGame-btn");
     var buttons = document.querySelectorAll('.player-move');
     var userScore = 0;
     var computerScore = 0;
@@ -140,7 +140,7 @@
         }
     }
 
-    button1.addEventListener('click', newGame);
+    buttonNewGame.addEventListener('click', newGame);
 
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function() {
