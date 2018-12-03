@@ -2,9 +2,7 @@
 (function () {
     var pointsToWin;
     var button1 = document.getElementById("newGame-btn");
-    var buttonRock = document.getElementById("rock");
-    var buttonPaper = document.getElementById("paper");
-    var buttonScissors = document.getElementById("scissors");
+    var buttons = document.querySelectorAll('.player-move');
     var userScore = 0;
     var computerScore = 0;
     var userScoreSpan = document.getElementById("user-score");
@@ -48,15 +46,15 @@
     }
 
     var disableButtons = function() {
-    	buttonRock.disabled = true;
-    	buttonPaper.disabled = true;
-    	buttonScissors.disabled = true;
+    	for (i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        }
     }
     
     var activateButtons = function() {
-        buttonRock.disabled = false;
-    	buttonPaper.disabled = false;
-    	buttonScissors.disabled = false;
+        for (i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = false;
+        }
     }
 
     var opponentPick = function (){
@@ -144,15 +142,9 @@
 
     button1.addEventListener('click', newGame);
 
-    buttonRock.addEventListener('click', function() {
-        playerMove("rock");
-    });
-    
-    buttonPaper.addEventListener('click', function() {
-        playerMove("paper");
-    });
-
-    buttonScissors.addEventListener('click', function() {
-        playerMove("scissors");
-    });
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function() {
+            playerMove(this.getAttribute("data-move"));
+        });
+    }
 })();
