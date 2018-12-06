@@ -25,6 +25,45 @@
                 <button class="game-btn" id="scissors" data-move="scissors"><i class="far fa-hand-scissors"></i></button>
                 <div class="memo" id="memo">Choose wisely!</div>
             </div>
+            <div class="overlay" id="modal-overlay">
+                <div class="modal" id="modal-score">
+                    <a href="#" class="close">x</a>
+                    <div class="content">
+                        <p class="modal-score__output" id="modal-score__output"></p>
+                        <div class="modal-score__table"" id="modal-score__table">
+                            <table class="table table-bordered" id="game-table">
+                                <thead>
+                                    <tr>
+                                        <th>Round Number</th>
+                                        <th>Player Move</th>
+                                        <th>Computer Move</th>
+                                        <th>Round Result</th>
+                                        <th>Game Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="game-table__body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="modal-newGame">
+                    <a href="#" class="close">x</a>
+                    <div class="content">
+                        <form>
+                            <div class="form-group">
+                                <label for="inputName">Name</label>
+                                <input type="text" class="form-control" id="inputName" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputRoundLimit">Amount of points needed to win the game? Max-10</label>
+                                <input type="number" class="form-control" id="inputRoundLimit" placeholder="Score needed to win the game">
+                            </div>
+                            <button type="submit" class="btn btn-success" id="formButton">Let's go!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
