@@ -1,185 +1,53 @@
-body {
-  font-family: "Sedgwick Ave", cursive;
-  background-color: #fcc496;
-}
+body { font-family: "Sedgwick Ave", cursive; background-color: #fcc496; }
 
-.container {
-  height: 100vh;
-  display: -ms-flexbox;
-  display: flex;
-  display: -webkit-flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
+.container { height: 100vh; display: -ms-flexbox; display: flex; display: -webkit-flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-.console {
-  height: 40vh;
-  width: 100%;
-  display: block;
-  text-align: center;
-}
+.console { height: 40vh; width: 100%; display: block; text-align: center; }
 
-.console__mainHeader {
-  margin-bottom: 3vh;
-  width: 100%;
-  line-height: 60px;
-  font-size: 60px;
-}
+.console__mainHeader { margin-bottom: 3vh; width: 100%; line-height: 60px; font-size: 60px; }
 
-.console__secondaryHeader {
-  margin-top: 0;
-}
+.console__secondaryHeader { margin-top: 0; }
 
-.console .newGame-btn {
-  margin: 10px auto;
-}
+.console .newGame-btn { margin: 10px auto; }
 
-.console .scoreboard {
-  display: none;
-  height: 6vh;
-  width: 40%;
-  margin: 0 auto;
-  border: 2px solid #333;
-  border-radius: 4px;
-  position: relative;
-  font-size: 40px;
-}
+.console .scoreboard { display: none; height: 6vh; width: 40%; margin: 0 auto; border: 2px solid #333; border-radius: 4px; position: relative; font-size: 40px; }
 
-.console .scoreboard .badge {
-  padding: 10px 0;
-  display: block;
-  width: 80px;
-  background-color: #498b8d;
-}
+.console .scoreboard .badge { padding: 10px 0; display: block; width: 80px; background-color: #498b8d; }
 
-.console .scoreboard .badge-user {
-  position: absolute;
-  left: 5%;
-  top: 30%;
-}
+.console .scoreboard .badge-user { position: absolute; left: 5%; top: 30%; }
 
-.console .scoreboard .badge-computer {
-  position: absolute;
-  right: 5%;
-  top: 30%;
-}
+.console .scoreboard .badge-computer { position: absolute; right: 5%; top: 30%; }
 
-.console .scoreboard .user-score {
-  line-height: 6vh;
-}
+.console .scoreboard .user-score { line-height: 6vh; }
 
-.console .game-btn {
-  width: 90px;
-  font-size: 60px;
-  line-height: 70px;
-  padding: 8px;
-  margin: 10px;
-  display: none;
-  background-color: #fcc496;
-  border: none;
-}
+.console .game-btn { width: 90px; font-size: 60px; line-height: 70px; padding: 8px; margin: 10px; display: none; background-color: #fcc496; border: none; }
 
-.console .game-btn:focus {
-  outline: none;
-}
+.console .game-btn:focus { outline: none; }
 
-.console .green-border {
-  border: 3px solid #4dcc7d;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #31b43a;
-}
+.console .green-border { border: 3px solid #4dcc7d; border-radius: 50%; box-shadow: 0 0 10px #31b43a; }
 
-.console .red-border {
-  border: 3px solid #fc121b;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #d01115;
-}
+.console .red-border { border: 3px solid #fc121b; border-radius: 50%; box-shadow: 0 0 10px #d01115; }
 
-.console .gray-border {
-  border: 3px solid #464647;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #25292b;
-}
+.console .gray-border { border: 3px solid #464647; border-radius: 50%; box-shadow: 0 0 10px #25292b; }
 
-.console .output {
-  display: block;
-  height: 26px;
-  text-align: center;
-  font-size: 26px;
-  line-height: 26px;
-  margin: 1vh auto;
-}
+.console .output { display: block; height: 26px; text-align: center; font-size: 26px; line-height: 26px; margin: 1vh auto; }
 
-.console .memo {
-  display: none;
-  margin: 1vh auto;
-  font-size: 24px;
-}
+.console .memo { display: none; margin: 1vh auto; font-size: 24px; }
 
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-}
+.overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); }
 
-.overlay.show {
-  display: block;
-}
+.overlay.show { display: block; }
 
-.modal {
-  display: none;
-  background: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  bottom: auto;
-  transform: translate3d(-50%, -50%, 0);
-}
+.modal { display: none; background: #fff; position: absolute; top: 50%; left: 50%; bottom: auto; transform: translate3d(-50%, -50%, 0); }
 
-.modal.show {
-  display: block;
-}
+.modal.show { display: block; }
 
-.modal .close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 5px;
-  color: #000;
-  text-decoration: none;
-}
+.modal .close { position: absolute; right: 0; top: 0; padding: 5px; color: #000; text-decoration: none; }
 
-.modal header {
-  font-size: 20px;
-  line-height: 30px;
-  min-height: 30px;
-  font-weight: bold;
-  padding: 0 30px;
-}
+.modal header { font-size: 20px; line-height: 30px; min-height: 30px; font-weight: bold; padding: 0 30px; }
 
-.modal .content {
-  min-height: 30px;
-  padding: 3vh 4vw;
-  text-align: center;
-  font-size: 24px;
-}
+.modal .content { min-height: 30px; padding: 3vh 4vw; text-align: center; font-size: 24px; }
 
-.modal-score__table {
-  font-size: 18px;
-  overflow: auto;
-  height: 300px;
-}
+.modal-score__table { font-size: 18px; overflow: auto; height: 300px; }
 
-.modal-score__output {
-  font-size: 26px;
-  font-weight: bold;
-}
-/*# sourceMappingURL=style.css.map */
+.modal-score__output { font-size: 26px; font-weight: bold; }

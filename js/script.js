@@ -23,7 +23,7 @@
         playerChoice: undefined,
         computerChoice: undefined,
         roundResult: undefined,
-        progress: []
+        progress: [],
     }
 
     var gameData = {
@@ -31,7 +31,7 @@
         playerMv: undefined,
         computerMv: undefined,
         roundRslt: undefined,
-        gameScr: undefined
+        gameScr: undefined,
     }
 
     var isInputValid = function (pointsToWin) {
@@ -57,7 +57,7 @@
             userScoreSpan.innerHTML = params.userScore;
             params.computerScore = 0;
             computerScoreSpan.innerHTML = params.computerScore;
-            while (output.hasChildNodes ()) {
+            while (output.hasChildNodes()) {
                 output.removeChild(output.firstChild);
             }
         }
@@ -85,59 +85,48 @@
     var playerMove = function(playerPick) {
         params.roundCount = ++params.roundCount;
         params.playerChoice = playerPick;
+        var passRoundResult = function (msg, computerChoice, roundResult) {
+            output.innerHTML = msg;
+            params = Object.assign(params, {
+              computerChoice: computerChoice,
+              roundResult: roundResult,
+            });
+          }
         switch (playerPick + opponentPick()) {
             case "rockrock":
-                output.innerHTML = ('You both chose ROCK. It is a tie.');
-                params.computerChoice = 'rock';
-                params.roundResult = 'draw';
+                passRoundResult('You both chose ROCK. It is a tie.', 'rock', 'draw');
                 draw(playerPick);
                 break;
             case "paperpaper":
-                output.innerHTML = ('You both chose PAPER. It is a tie.');
-                params.computerChoice = 'paper';
-                params.roundResult = 'draw';
+                passRoundResult('You both chose PAPER. It is a tie.', 'paper', 'draw');
                 draw(playerPick);
                 break;
             case "scissorsscissors":
-                output.innerHTML = ('You both chose SCISSORS. It is a tie.');
-                params.computerChoice = 'scissors';
-                params.roundResult = 'draw';
+                passRoundResult('You both chose SCISSORS. It is a tie.', 'scissors', 'draw');
                 draw(playerPick);
                 break;
             case "rockpaper":
-                output.innerHTML = ('You played ROCK, opponent played PAPER. You lost.');
-                params.computerChoice = 'paper';
-                params.roundResult = 'loss';
+                passRoundResult('You played ROCK, opponent played PAPER. You lost.', 'paper', 'loss');
                 lose(playerPick);
                 break;
             case "rockscissors":
-                output.innerHTML = ('You played ROCK, opponent played SCISSORS. You won.');
-                params.computerChoice = 'scissors';
-                params.roundResult = 'win';
+                passRoundResult('You played ROCK, opponent played SCISSORS. You won.', 'scissors', 'win');
                 win(playerPick);
                 break;
             case "paperscissors":
-                output.innerHTML = ('You played PAPER, opponent played SCISSORS. You lost.');
-                params.computerChoice = 'scissors';
-                params.roundResult = 'loss';
+                passRoundResult('You played PAPER, opponent played SCISSORS. You lost.', 'scissors', 'loss');
                 lose(playerPick);
                 break;
             case "paperrock":
-                output.innerHTML = ('You played PAPER, opponent played ROCK. You won.');
-                params.computerChoice = 'rock';
-                params.roundResult = 'win';
+                passRoundResult('You played PAPER, opponent played ROCK. You won.', 'rock', 'win');
                 win(playerPick);
                 break;
             case "scissorsrock":
-                output.innerHTML = ('You played SCISSORS, opponent played ROCK. You lost.');
-                params.computerChoice = 'rock';
-                params.roundResult = 'loss';
+                passRoundResult('You played SCISSORS, opponent played ROCK. You lost.', 'rock', 'loss');
                 lose(playerPick);
                 break;
             case "scissorspaper":
-                output.innerHTML = ('You played SCISSORS, opponent played PAPER. You won.');
-                params.computerChoice = 'paper';
-                params.roundResult = 'win';
+                passRoundResult('You played SCISSORS, opponent played PAPER. You won.', 'paper', 'win');
                 win(playerPick);
                 break;
         }
@@ -146,7 +135,7 @@
             playerMv: params.playerChoice,
             computerMv: params.computerChoice,
             roundRslt: params.roundResult,
-            gameScr: params.userScore + ':' + params.computerScore 
+            gameScr: params.userScore + ':' + params.computerScore,
         }
         params.progress.push(gameData);
     }
@@ -206,22 +195,34 @@
 	};
 
     var createGameTable = function(results) {
+        var createCells = function (newRow, obj) {
+            var index = 0;
+            for (var property in obj) {
+                newRow.insertCell(index).innerHTML = obj[property];
+                index++;
+            }
+        }
+
         while (modalTableBody.hasChildNodes ()) {
             modalTableBody.removeChild(modalTableBody.firstChild);
         }
+
         for (var i = 0; i < results.length; i++) {
             var newRow = modalTableBody.insertRow(i);
             modalTableBody.insertBefore(newRow, modalTableBody.firstChild);
-            var cell1 = newRow.insertCell(0);
-            var cell2 = newRow.insertCell(1);
-            var cell3 = newRow.insertCell(2);
-            var cell4 = newRow.insertCell(3);
-            var cell5 = newRow.insertCell(4);
-            cell1.innerHTML = results[i].roundNmbr;
-            cell2.innerHTML = results[i].playerMv;
-            cell3.innerHTML = results[i].computerMv;
-            cell4.innerHTML = results[i].roundRslt;
-            cell5.innerHTML = results[i].gameScr;
+            var obj = results[i];
+            createCells(newRow, obj);
+
+            // var cell1 = newRow.insertCell(0);
+            // var cell2 = newRow.insertCell(1);
+            // var cell3 = newRow.insertCell(2);
+            // var cell4 = newRow.insertCell(3);
+            // var cell5 = newRow.insertCell(4);
+            // cell1.innerHTML = obj.roundNmbr;
+            // cell2.innerHTML = obj.playerMv;
+            // cell3.innerHTML = obj.computerMv;
+            // cell4.innerHTML = obj.roundRslt;
+            // cell5.innerHTML = obj.gameScr;
         }
     }
 
