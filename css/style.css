@@ -1,4 +1,4 @@
-body { font-family: "Sedgwick Ave", cursive; background-color: #fcc496; }
+body { font-family: "Sedgwick Ave", cursive; background-color: white; }
 
 .container { height: 100vh; display: -ms-flexbox; display: flex; display: -webkit-flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: center; justify-content: center; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
